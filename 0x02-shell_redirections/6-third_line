@@ -1,0 +1,2 @@
+#!/bin/bash
+cat   ./info.md | head -3 | tail -1

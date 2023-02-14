@@ -1,0 +1,14 @@
+total 48
+drwxrwxr-x 2 kowalski kowalski 4096 Feb 14 03:59 .
+drwxrwxr-x 3 kowalski kowalski 4096 Feb 14 03:35 ..
+-rwxrwxrwx 1 kowalski kowalski   31 Feb 14 03:38 0-hello_world
+-rwxrwxr-x 1 kowalski kowalski   27 Feb 14 03:40 1-confused_smiley
+-rwxrwxr-x 1 kowalski kowalski   27 Feb 14 03:41 2-hellofile
+-rwxrwxr-x 1 kowalski kowalski   38 Feb 14 03:42 3-twofiles
+-rwxrwxr-x 1 kowalski kowalski   28 Feb 14 03:43 4-lastlines
+-rwxrwxr-x 1 kowalski kowalski   28 Feb 14 03:43 5-firstlines
+-rwxrwxr-x 1 kowalski kowalski   47 Feb 14 03:48 6-third_line
+-rwxrwxr-x 1 kowalski kowalski   58 Feb 14 03:58 7-file
+-rwxrwxr-x 1 kowalski kowalski   35 Feb 14 03:59 8-cwd_state
+-rw-rw-r-- 1 kowalski kowalski   34 Feb 14 03:44 info.md
+-rw-rw-r-- 1 kowalski kowalski    0 Feb 14 03:59 ls_cwd_content
