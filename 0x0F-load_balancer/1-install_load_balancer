@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+# Installs HAProxy version 2.8 with the following configurations:
+#+    Enables management via the init script.
+#+    Distributes requests using a round-robin algorithm.
+
+apt-get install --no-install-recommends software-properties-common
+add-apt-repository -y ppa:vbernat/haproxy-2.8
+apt-get update
+apt-get install -y haproxy=2.8.\*
+
+cat <<EOF > /etc/haproxy/haproxy.cfg
+
+global
+    log /dev/log    local0
+    log /dev/log    local1 notice
+    chroot /var/lib/haproxy
+    stats socket /run/haproxy/admin.sock mode 660 level admin expose-fd listeners
+    stats timeout 30s
+    user haproxy
+    group haproxy
+    daemon
+
+defaults
+    log global
+    mode http
+    option httplog
+    option dontlognull
+    retries 3
+    timeout connect 5000
+    timeout client 10000
+    timeout server 10000
+
+frontend hbnb_frontend
+    bind *:80
+    default_backend hbnb_backend
+
+backend hbnb_backend
+    balance roundrobin
+    server 247179-web-01 54.89.134.42:80 check
+    server 247179-web-02 100.25.203.239:80 check
+
+# You can add more configuration options as needed
+EOF
+
+# Restart HAProxy service to apply changes
+systemctl restart haproxy
